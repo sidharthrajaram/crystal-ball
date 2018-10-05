@@ -2,9 +2,6 @@ import pandas as pd
 from bs4 import BeautifulSoup
 import re
 import urllib.request
-import numpy as np
-
-header = []
 
 def getPlayerDataFrame(name):
     global header
@@ -31,23 +28,4 @@ def getPlayerDataFrame(name):
 
     df = pd.read_html(str(table))[0]
     header = df.columns.values.tolist()
-    return df
-
-def getTwoYearTotals(df):
-
-    last_year = np.array(list(filter(lambda a: str(a) != 'nan', df.iloc[-2])))
-
-    if len(df['Season']) > 2:
-        #not a rookie
-        last_last_year = np.array(list(filter(lambda a: str(a) != 'nan', df.iloc[-3] )))
-        return [True, last_year, last_last_year]
-    else:
-        #rookie
-        return [False, last_year]
-
-name = input('Player name: ')
-df = getPlayerDataFrame(name)
-print(getTwoYearTotals(df))
-# latest_stats = df.iloc[-2]
-# latest_stats = np.array(list(filter(lambda a: str(a) != 'nan', latest_stats)))
-# print(latest_stats)
+    return df, header
