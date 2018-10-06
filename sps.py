@@ -48,7 +48,8 @@ def predictStat(stat_tuple, stat):
 
     else:
         #to be improved
-        predicted_stat = last_year_stat
+        adjustment = (28-age)*0.004
+        predicted_stat = (1+adjustment)* ((last_year_stat/last_year_mins) * 36)
 
     return predicted_stat
 
