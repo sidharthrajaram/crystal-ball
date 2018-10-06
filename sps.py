@@ -51,7 +51,7 @@ def predictStat(stat_tuple, stat):
         adjustment = (28-age)*0.004
         predicted_stat = (1+adjustment)* ((last_year_stat/last_year_mins) * 36)
 
-    return predicted_stat
+    return round(predicted_stat, 2)
 
 
 def getStatline(stat_tuple):
@@ -75,7 +75,4 @@ def predict(name):
     header = player_data[1]
     stat_tuple = getTwoYearTotals(df)
     statline = getStatline(stat_tuple)
-    print(statline)
-
-name = input('Player name: ')
-predict(name)
+    return statline

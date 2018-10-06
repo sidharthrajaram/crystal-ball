@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Crystalball</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+
+    <script type="text/JavaScript">
+      var segment_str = window.location.pathname;
+      var segment_array = segment_str.split( '/' );
+      var last_segment = segment_array.pop();
+      var replaced = last_segment.replace(/%20/g, " ");
+      var uniform = replaced.toLowerCase();
+      function showName(){
+      var segment_str = window.location.pathname;
+      var segment_array = segment_str.split( '/' );
+      var last_segment = segment_array.pop();
+      var replaced = last_segment.replace(/%20/g, " ");
+      console.log( decodeURI(replaced) );
+      var uniform = replaced.toLowerCase();
+      display_name.innerHTML= uniform;
+      }
+      function search(){
+        var loc = window.location;
+        var name = document.getElementById("name").value;
+        window.location = name;
+      }
+   </script>
+
+</head>
+
+<body onload="showName();" style="text-align: center">
+  <h1>Crystalball</h1>
+  <h3>Predicting player performance</h3>
+
+   <div align="middle">
+      <div class="card-form">
+         <form class="signup">
+            <div class="form-body">
+               <div class="row">
+                  <input type="text" placeholder="Enter Player's Name" id="name">
+               </div>
+            </div>
+            <div class="form-footer" onclick="search()" value="submit" id="name">
+               <a>Predict</a>
+            </div>
+         </form>
+      </div>
+   </div>
+   <h2 style="font-weight: 800"><span id = "display_name"></h2>
+   <h2 style="font-size: 2em; margin-top: -0.75em;">18/19 projected stats:</h2>
+   <h2><b>{{ prediction[-1] }}</b> points</h2>
+   <h2><b>{{ prediction[-7] }}</b> rebounds</h2>
+   <h2><b>{{ prediction[-6] }}</b> assists</h2>
+   <h2><b>{{ prediction[-5] }}</b> steals</h2>
+   <h2><b>{{ prediction[-4] }}</b> blocks</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

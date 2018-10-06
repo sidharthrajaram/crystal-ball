@@ -1,0 +1,99 @@
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: auto;
+  width: 100%;
+}
+
+#potential {
+    color: #f95867;
+}
+
+.inline-block {
+    display: inline-block;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+h1 {
+  font-weight: 800;
+  font-size: 6vw;
+}
+
+h2 {
+  font-weight: 300;
+  font-size: 2.5em;
+}
+
+h3 {
+  margin-top: -1.75em;
+  font-weight: 400;
+  margin-bottom: 0.5em;
+  font-size: 2.5vw;
+}
+
+.card-form {
+    width: 70%;
+    background: white;
+    border-radius: 10px;
+    margin: auto;
+}
+
+.card-form .form-body .row {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+    padding: 10px;
+    margin: auto;
+}
+
+.card-form .form-body .row input[type="text"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 90%;
+    margin: 0 15px;
+    height: 2.5em;
+    padding: 5px 15px;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    background: #ECEFF1;
+    color: #576366;
+    font-size: 1em;
+    margin: auto;
+}
+
+.card-form .rule {
+    height: 2px;
+    background: #e8ebed;
+    margin: 0px 35px;
+    margin: auto;
+}
+
+.card-form .form-footer {
+    margin: 0 25px 15px 25px;
+    padding: 15px 0px;
+}
+
+.card-form .form-footer a {
+    display: inline-block;
+    width: 5em;
+    height: 1.5em;
+    line-height: 40px;
+    border: none;
+    border-radius: 5px;
+    padding: 15px;
+    background: #f95867;
+    margin-right: 10px;
+    font-size: 1.5em;
+    margin: auto;
+}
+
+.card-form .form-footer span {
+    margin-left: 8px;
+}
